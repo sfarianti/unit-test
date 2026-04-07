@@ -12,7 +12,7 @@ class TaskController extends Controller
         $task = Task::all();
         return view('task.index', compact('task'));
     }
-
+    
     public function store(Request $request)
     {
         $request->validate([
@@ -37,7 +37,7 @@ class TaskController extends Controller
 
         $task->update($request->all());
 
-        return redirect()->route('tasl.index')->with('succes', 'Task update successfully');
+        return redirect()->route('task.index')->with('succes', 'Task update successfully');
     }
 
     public function destroy(Task $task)
