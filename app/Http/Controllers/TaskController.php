@@ -37,7 +37,7 @@ class TaskController extends Controller
 
         $task->update($request->all());
 
-        return redirect()->route('task.index')->with('succes', 'Task update successfully');
+        return redirect()->route('task.index')->with('success', 'Task update successfully');
     }
 
     public function destroy(Task $task)
