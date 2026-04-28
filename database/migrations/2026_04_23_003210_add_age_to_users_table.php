@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('task', function (Blueprint $table) {
-            $table->id();
-            $table->string('type')->nullable();
-            $table->timestamps();
-
-            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
+        Schema::table('users', function (Blueprint $table) {
+            //
         });
     }
 
@@ -25,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('task');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 };

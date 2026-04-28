@@ -17,6 +17,7 @@ class TaskController extends Controller
     {
         $request->validate([
             'type'=>'required',
+            'user_id' =>'nullable',
         ]);
 
         Task::create($request->all());
@@ -32,7 +33,8 @@ class TaskController extends Controller
     public function update(Request $request, Task $task)
     {
         $request->validate([
-            'type'=>'required'
+            'type'=>'required',
+            'user_id' =>'nullable'
         ]);
 
         $task->update($request->all());

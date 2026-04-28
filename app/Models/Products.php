@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Task extends Model
+class Products extends Model
 {
-    protected $table="task";
     protected $fillable = [
-        'type'
+        'product_name',
+        'harga',
+        'stok'
     ];
 }

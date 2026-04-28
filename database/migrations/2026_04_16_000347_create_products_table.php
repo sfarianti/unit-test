@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('task', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('type')->nullable();
+            $table->string('product_name');
+            $table->integer('harga');
+            $table->integer('stok');
             $table->timestamps();
-
-            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
         });
     }
 
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('task');
+        Schema::dropIfExists('products');
     }
 };
